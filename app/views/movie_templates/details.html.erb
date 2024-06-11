@@ -13,8 +13,8 @@
   <dd><img src="<%=@the_movie.image%>" width = "100"></dd>
   <dt>Director<dl>
   <dd>
-    <%@matching_records = Director.where({:id=>@the_movie.id})%>
-    <%=@matching_records.at(0).name%>
+    <%@matching_records = Director.where({:id=>@the_movie.director_id}).at(0)%>
+    <%=@matching_records.name%>
   </dd>
 
 </dl>
