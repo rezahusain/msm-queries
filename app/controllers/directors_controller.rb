@@ -10,10 +10,14 @@ class DirectorsController < ApplicationController
   end
 
   def young
+    @youngest_director = Director.order(dob: :desc).limit(1).at(0)
+    @date = @youngest_director.dob.strftime("%B %e, %Y")
     render({:template=>"director_templates/youngest"})
   end
 
   def old
+    @oldest_director = Director.order(:dob).limit(1).at(0)
+    @date = @oldest_director.dob.strftime("%B %e, %Y")
     render({:template=>"director_templates/oldest"})
   end
 
