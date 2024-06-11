@@ -9,4 +9,12 @@ class DirectorsController < ApplicationController
     render({:template=>"director_templates/details"})
   end
 
+  def young
+    render({:template=>"director_templates/youngest"})
+  end
+
+  def old
+    render({:template=>"director_templates/oldest"})
+  end
+
 end
